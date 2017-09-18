@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="icon" href="img/sbi.png">
+    <title>Welcome </title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+   
+	<link href="css/form.css" rel="stylesheet">
+
+
+
+  </head>
+  <body>
+  
+
+    
+       
+<div id="container">
+  <div id="container_body">
+    <div>
+      <h2 class="form_title"> Create Feature/Test case</h2>
+      <div class="form-group">
+    <span class="text-muted"><em><span style="color:red;">*</span> Indicates required field</em></span>
+  </div>    
+    </div>
+    <!--Form  start-->
+    <div id="form_name">
+     
+       <form name="form" method="get" action="#" >
+       <div class="formbody">
+	     <div class="form-group">Tag Name <span class="text-muted"><em> (Optional)</em></span>
+        <input type="text" name="Name" value="" placeholder="Tag Name" class="form-control"   ></div>
+		<div class="form-group">Feature <span style="color:red;">*</span>
+        <input type="text" name="Name" value="" placeholder="Feature" class="form-control" required ></div>
+		<div class="form-group">Scenario Outline<span style="color:red;">*</span>
+		<input type="text" name="Name" value="" placeholder="Scenario Outline" class="form-control" required ></div>
+		<div class="form-group">Steps<span style="color:red;">*</span>
+        <input type="text" name="Name" value="" placeholder="Steps" class="form-control"  required ></div>
+		<div class="form-group">Examples<span style="color:red;">*</span>
+		<input type="text" name="Name" value="" placeholder="Examples" class="form-control"  required ></div>
+		
+       </div>
+      
+     
+    
+     
+       <div >
+        <button id="submit" class="btn btn-primary " onClick="AddSteps ()"  >Add Steps  </button>
+      
+        <button id="submit"  class="btn btn-primary " onClick="AddExamples()">Add Examples </button>
+      
+        <button id="submit" class="btn btn-primary " onClick="SaveFeature()">Save feature </button>
+      </div>
+        
+     
+      </div>
+    <!--form ends--> 
+  </div>
+</div>
+<!--container ends-->
+    
+
+    
+
+  <script>
+     CKEDITOR.replace( 'editor1' );
+ </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

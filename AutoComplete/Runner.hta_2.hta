@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<head>
+<style>
+					table, th, td {
+						border: 1px solid black;
+						border-collapse: collapse;
+					}
+					th, td {
+						padding: 5px;
+						text-align: middle;
+					}
+
+					.button {
+						position:absolute;  // absolutely positioned
+						transition: .5s ease;
+						top: 100%;  // Makes vertical center
+						left: 50%;
+						width: 100px;
+						text-align: center;
+						margin:0 auto;
+					}
+					</style>
+
+</head>
+
+
+<BODY bgcolor="#E6E6E6">
+
+<form method="GET" id="my_form"></form>
+
+<table id="runtable" style="width:50%">
+
+
+    <tr>	
+	
+        <td>
+		TagName    :
+            <input type="text" id="firstname" name="company" form="my_form" style="width:50%" />
+            </td>
+    </tr>
+	
+	 <tr>	
+	
+        <td>
+		Feature :
+            <input type="text" id="firstname" name="company" form="my_form" style="width:50%" />
+            </td>
+    </tr>
+	
+	   <td>
+		AddSteps :
+            <input type="text" id="complete1" name="company" class='bt' form="my_form" style="width:50%" />
+			
+			<button  type="button"  onclick='changeText2()'  form="my_form">AddSteps</button>
+
+			</td>
+    </tr>
+	
+	 <tr>	
+	
+        <td>
+		Examples :
+            <input type="text" id="complete12" name="company" form="my_form" style="width:50%" />				
+<br>
+<p>Your first name is: <b id='boldStuff2'></b</p>
+<p>Other people's names:</p>
+<ol id="demo"></ol>
+<button  type="button"  onclick='changeText2()' form="my_form">Examples</button>
+			</td>
+    </tr>
+</table>
+
+<div id="titleDiv" style="background-color:#EECC99;position:absolute;top:0px;left:0px;border:1px solid #000000;visibility:hidden;overflow:auto;font-family:Tahoma;font-size:10px;font-weight:bold;z-Index:5;padding-left:2px;" onmouseout="offComplete();" onmousemove="onComplete();"></div>
+<div id="completeDiv" hC="0" style="position:absolute;top:0px;left:0px;border:1px solid #000000;border-top:0px;visibility:hidden;overflow:auto;" onmouseout="offComplete();" onmousedown="setTimeout('cS=true', 10);" onmousemove="onComplete();"></div><div id="holderDiv"></div>
+
+
+<script language="Javascript" src="ACPDropDown.js"></script>
+
+<script>
+
+
+function changeText2() {
+
+ 
+        var iCnt = 0;
+        // CREATE A "DIV" ELEMENT AND DESIGN IT USING jQuery ".css()" CLASS.
+        var container =(document.createElement('td'));
+		
+		
+
+            if (iCnt <= 19) {
+ 
+                iCnt = iCnt + 1;
+ 
+                // ADD TEXTBOX.
+                container.append('<input type=text class="input" id=tb' + iCnt + ' ' +
+                            'value="Text Element ' + iCnt + '" />');
+ 
+                // SHOW SUBMIT BUTTON IF ATLEAST "1" ELEMENT HAS BEEN CREATED.
+                if (iCnt == 1) {
+ 
+                    var divSubmit = $(document.createElement('div'));
+                    $(divSubmit).append('<input type=button class="bt"' + 
+                        'onclick="GetTextValue()"' + 
+                            'id=complete1 value=Submit />');
+ 
+                }
+ 
+                // ADD BOTH THE DIV ELEMENTS TO THE "main" CONTAINER.
+                $('#main').after(container, divSubmit);
+            }
+            // AFTER REACHING THE SPECIFIED LIMIT, DISABLE THE "ADD" BUTTON.
+            // (20 IS THE LIMIT WE HAVE SET)
+            else {      
+                $(container).append('<label>Reached the limit</label>'); 
+                $('#btAdd').attr('class', 'bt-disable'); 
+                $('#btAdd').attr('disabled', 'disabled');
+            }
+        };
+
+
+
+
+/*
+
+NOTE:  If you turn word-wrap off in your editor, this file is easier to read
+
+*/
+
+
+completePrep(gid('complete1'), 'ACP1');
+
+var ACP1 = {
+	Nm:            'ACP1',
+	AutoCompleteOn:[0], // Determines which fields to auto-complete on.
+	TextVal:       0,     // Value to put in the text box.
+	ValueOf:       1,     // Value to put in the value box.
+	maxHeight:     150,
+//	Width:         400,   // if width is off, dropdown will auto-fit the input-box.
+	OrderBy:       0,	    // A field that is already ordered.  Prevents script from auto-ordering this field.
+	titleStyle:    'background-color:#EECC99;border:1px solid #000000;font-family:Tahoma;font-size:10px;font-weight:bolx;padding:2px;',
+	contentStyle:  'background-color:#FFFFFF;border:1px solid #000000;border-top:0px;',
+	bgColor:       '#FFFFFF',
+	Nms:				[
+						'Steps'
+						],
+	Styles:			[
+						'background-color:#ffffff;font-family:Tahoma;font-size:10px;overflow:hidden;padding:2px;',
+						'background-color:#ffffff;font-family:Tahoma;font-size:10px;overflow:hidden;padding:2px;'
+						],
+	HLStyle:			'background-color:#3366cc;color:#FFFFFF;',
+	fieldW:			[75], // width% of all the fields.  Set to 0 to not show field.
+	fields:			[
+						['And launch browser and open application14','Given launch browser and open application14', 'Then launch browser and open application15','When launch browser and open application15'],
+						
+						]
+}
+prepACP(ACP1);
+</script>
+</BODY>
+</HTML>

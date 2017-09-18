@@ -1,0 +1,5 @@
+https://selenisolutions.wordpress.com/2016/08/02/excel-data-for-cucumber-framework-bdd/
+http://specflow.org/plus/excel/#top
+https://github.com/jrgarlick/cucumber-jvm-xls
+
+https://github.com/zhengzhiqiang/cucumber-xls
